@@ -1,10 +1,10 @@
-import CourseGoal from "./components/CourseGoal.tsx";
 import "./App.css";
 import goalsImg from "./assets/react.svg";
 import Header from "./components/Header.tsx";
 import { useState } from "react";
+import CourseGoalList from "./components/CourseGoalList.tsx";
 
-type CourseGoal = {
+export type CourseGoal = {
   title: string;
   description: string;
   id: number;
@@ -29,7 +29,8 @@ function App() {
       <Header image={{ src: goalsImg, alt: "A list of goals" }}>
         <h1>Your COurse Goals</h1>
         <button onClick={handleAddGoal}>Add New Goal</button>
-        <ul>
+        <CourseGoalList goals={goals}></CourseGoalList>
+        {/* <ul>
           {goals.map((goal) => (
             <li key={goal.id}>
               <CourseGoal title={goal.title}>
@@ -37,7 +38,7 @@ function App() {
               </CourseGoal>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </Header>
     </main>
   );
