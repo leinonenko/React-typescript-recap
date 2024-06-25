@@ -26,7 +26,7 @@ function App() {
   }
 
   function handleDeleteGoal(id: number) {
-setGoals(prevGoals => prevGoals.filter((goal) => goal.id !== id))
+    setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== id));
   }
 
   return (
@@ -34,7 +34,10 @@ setGoals(prevGoals => prevGoals.filter((goal) => goal.id !== id))
       <Header image={{ src: goalsImg, alt: "A list of goals" }}>
         <h1>Your COurse Goals</h1>
         <NewGoal></NewGoal>
-        <CourseGoalList goals={goals} onDeleteGoal={handleDeleteGoal}></CourseGoalList>
+        <CourseGoalList
+          goals={goals}
+          onDeleteGoal={handleDeleteGoal}
+        ></CourseGoalList>
         {/* <ul>
           {goals.map((goal) => (
             <li key={goal.id}>
