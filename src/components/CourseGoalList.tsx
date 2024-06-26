@@ -15,7 +15,7 @@ export default function CourseGoalList({
 }: CourseGoalListProps) {
   if (goals.length === 0) {
     return (
-      <InfoBox mode="hint">You have no goal yet. Start adding lazy mzf</InfoBox>
+      <InfoBox mode="hint" severity="low">You have no goal yet. Start adding lazy mzf</InfoBox>
     );
   }
 
@@ -23,12 +23,12 @@ export default function CourseGoalList({
 
   if (goals.length >= 4) {
     warningBox = (
-      <InfoBox mode="warning">Easy boy! Don't put too much goals!</InfoBox>
+      <InfoBox mode="warning" severity="high">Easy boy! Don't put too much goals!</InfoBox>
     );
   }
   return (
     <>
-    {warningBox}
+      {warningBox}
       <ul>
         {goals.map((goal) => (
           <li key={goal.id}>
