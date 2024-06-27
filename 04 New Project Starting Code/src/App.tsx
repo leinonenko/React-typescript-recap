@@ -1,5 +1,12 @@
+import Button from "./components/Button.tsx";
+
 function App() {
-  return <h1>Let's get started!</h1>;
+  return (
+    <main>
+      <Button el="button">Button</Button>
+      <Button el="anchor" href="https://google.com">A Link</Button>
+    </main>
+  );
 }
 
 export default App;
